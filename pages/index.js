@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
+import Navbar from '../components/Navbar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,109 +15,253 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.js</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
+      <main>
+        <Navbar />
+        {/* section with circle */}
+        <section className='bg-[#00BEFF] mt-44 h-80 max-w-[74rem] mx-auto px-32  flex justify-between items-center gap-16'>
+          <div className='space-y-6'>
+            <h4 className='font-bold text-3xl'>Students</h4>
+            <p>Important news, links, documents, and tips for students of the University of Stuttgart: This page offers information on your studies.</p>
           </div>
-        </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
+          <div className='p-32 relative text-white hover:text-black -mb-28 bg-[#333333] hover:bg-white duration-200 rounded-full'>
+            <div className='absolute top-28  left-10'>
+              <p className='text-md font-bold'>INFORMATION FOR
+                PROSPECTIVE STUDENTS</p>
+            </div>
           </div>
-        </div>
+        </section>
+        {/* form section */}
+        <section className='max-w-[74rem] bg-white mx-auto'>
+          <div className=' max-w-[44rem] mx-auto grid py-16'>
+            <div className=' bg-[#EEEEEE] px-10  py-6'>
+              <h4 className='mb-2'>Begriff</h4>
+              <div>
+                <input className='border border-gray-500  py-4 px-2 w-full focus:outline-blue-500' type="text" placeholder='Suchen Sie nach Begriffen aus dem Uni-Glossar' />
+                <button className='px-6 text-sm py-4 bg-blue-600 text-white mt-4'>BEGRIFF SUCHEN</button>
+              </div>
+            </div>
+          </div>
+        </section>
 
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
+        <section>
+          <div className='max-w-[74rem] bg-white px-32 mx-auto grid grid-cols-3 gap-5'>
+            {[{
+              title: 'igital services',
+              desc: [1, 2, 3, 4, 5, 6]
+            }, {
+              title: 'igital services',
+              desc: [1, 2, 3, 4, 5]
+            }, {
+              title: 'igital services',
+              desc: [1, 2, 3, 4, 5]
+            },].map((e, idx) => {
+              return (
+                <div key={idx}>
+                  <img src="https://www.student.uni-stuttgart.de/img/easydb-2019_11_20_Unitag_118.jpg?__scale=w:370,h:370,cx:332,cy:0,cw:1335,ch:1335" alt="" />
+                  <h4 className='py-2 text-lg font-bold'>{e.title}</h4>
+                  <div>
+                    <div>
+                      {e.desc.map((e, idx) => {
+                        return (
+                          <h4 className='py-2  font-semiboldbold'>How to C@MPUS</h4>
+                        )
+                      })}
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </section>
+        {/* button section */}
+        <section className='max-w-[74rem] bg-white grid py-2 mx-auto'>
+          <div className='m-auto'>
+            <button className='px-6 text-sm font-bold py-4 bg-blue-600 text-white mt-4 mx-auto'>
+              STUDY PROGRAMS'WEBPAGES FOR STUDENTS</button>
+          </div>
+        </section>
+        {/* next section */}
+        <section>
+          <div className='max-w-[74rem] bg-[#333333] text-white  py-2 px-32 mx-auto'>
+            <h4 className='text-2xl font-bold'>News and events for students</h4>
+            <div className='grid grid-cols-3 mt-5 gap-6'>
+              <div className='space-y-6'>
+                {[1, 2].map((e, i) => {
+                  return (
+                    <div className='bg-white text-black py-8 px-4'>
+                      <h4 className='text-2xl font-bold'>Newsticker: Information
+                        on the coronavirus</h4>
+                      <p>Article | 11/10/22</p>
+                    </div>
+                  )
+                })}
+              </div>
+              {[
+                {
+                  img: 'https://www.uni-stuttgart.de/universitaet/aktuelles/video/img-video-vorschaubilder/24A_1280x720.jpg?__scale=w:560,h:400,cx:136,cy:0,cw:1008,ch:720',
+                  tititle: 'Latest episode:Intelligent systems will help us in crises and in he future',
+                  desc: 'Video I YouTube'
 
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
+                },
+                {
+                  img: "https://www.usus.uni-stuttgart.de/img/2022/stressed-student.jpg?__scale=w:560,h:400,cx:67,cy:0,cw:1866,ch:1333",
+                  tititle: 'veryone feels sometimes stressed during their studies. But what can ou do against it? Constanza has aew tips.',
+                  desc: 'USUS blog | 1/4/23'
 
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
+                }, {
+                  img: "https://www.usus.uni-stuttgart.de/img/2022/stressed-student.jpg?__scale=w:560,h:400,cx:67,cy:0,cw:1866,ch:1333",
+                  tititle: 'veryone feels sometimes stressed during their studies. But what can ou do against it? Constanza has aew tips.',
+                  desc: 'USUS blog | 1/4/23'
 
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
+                }, {
+                  img: "https://www.usus.uni-stuttgart.de/img/2022/stressed-student.jpg?__scale=w:560,h:400,cx:67,cy:0,cw:1866,ch:1333",
+                  tititle: 'veryone feels sometimes stressed during their studies. But what can ou do against it? Constanza has aew tips.',
+                  desc: 'USUS blog | 1/4/23'
+
+                },
+                {
+                  img: "https://www.usus.uni-stuttgart.de/img/2022/stressed-student.jpg?__scale=w:560,h:400,cx:67,cy:0,cw:1866,ch:1333",
+                  tititle: 'veryone feels sometimes stressed during their studies. But what can ou do against it? Constanza has aew tips.',
+                  desc: 'USUS blog | 1/4/23'
+
+                },].map((e, idx) => {
+                  return (
+                    <div key={idx} className='bg-white space-y-5 text-black'>
+                      <img src={e.img} alt="" />
+                      <div className='px-4 flex items-start flex-col justify-between'>
+                        <h4 className={`${idx === 0 ? 'text-2xl font-bold' : 'text-md'} `}>
+                          {e.tititle}
+                        </h4>
+                      </div>
+                    </div>
+                  )
+                })}
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div className='max-w-[74rem] bg-white h-10 px-32 mx-auto'>
+            hello
+          </div>
+        </section>
+
+        <section>
+          <div className='max-w-[74rem] bg-[#004696] text-white  py-6 px-32 mx-auto'>
+            <h4 className='text-2xl font-bold'>News and events for students</h4>
+            <div className='grid grid-cols-2'>
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((e, idx) => {
+                return (
+
+                  <div key={idx} className='mt-5 flex gap-4 items-center'>
+                    <div className='border border-white  px-12 rounded-full py-12'>
+                      <svg className='' width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="5.072" stroke="#ffffff" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><polyline points="18.86 57.47 44.12 30.84 18.86 6.58"></polyline></g></svg>
+                    </div>
+                    <div>
+                      <h4 className='font-bold text-xl'>All study programs</h4>
+                      <p className='max-w-xs'>On the webpages of your degree program
+                        you will find information on the study pro-
+                        gram structure,</p>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+        {/* card before footer */}
+        <section>
+          <div className='max-w-[74rem] bg-white  py-6 px-32 mx-auto'>
+            <h4 className='text-2xl font-bold'>Contact</h4>
+            <div className='grid grid-cols-3 gap-6 mt-10'>
+              {[
+                {
+                  title: 'Dezernat Internationales',
+                  desc: [1, 2, 3]
+                },
+                {
+                  title: 'Dezernat Internationales',
+                  desc: [1, 2, 3]
+                },
+                {
+                  title: 'Dezernat Internationales',
+                  desc: [1, 2, 3]
+                }
+              ].map((e, idx) => {
+                return (
+                  <div key={idx} className='border-2 border-black p-6 flex flex-col'>
+                    <img className='rounded-full m-auto' src="https://www.beschaeftigte.uni-stuttgart.de/img-beschaeftigte/iz_mitarbeiter/Dezernat-Internationales-IZ.jpg?__scale=w:150,h:150,cx:0,cy:0,cw:2000,ch:2000" alt="" />
+                    <h4 className='text-2xl mt-20 font-bold'>{e.title}</h4>
+                    <div>
+                      <div>
+                        {e.desc.map((e, idx) => {
+                          return (
+                            <p>Profile Page</p>
+                          )
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+        <footer>
+          <div className='max-w-[74rem]  bg-[#333333] text-white pt-16 px-32 mx-auto'>
+            <div className='grid grid-cols-2'>
+              <div>
+                <img className='w-64' src="https://www.student.uni-stuttgart.de/system/modules/de.stuttgart.uni.v3.basics/resources/img/svg/logo-inverted-en.svg" alt="" />
+              </div>
+              <div className='flex gap-3 items-center'>
+                {[1, 2, 3, 4, 5, 6, 7].map((e, idx) => {
+                  return (
+                    <svg className='fill-[#333333] border border-gray-400  rounded-full' xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 48 48" fill="none">
+                      <circle cx="24" cy="24" r="20" fill="" />
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M29.315 16.9578C28.6917 16.8331 27.8498 16.74 27.3204 16.74C25.8867 16.74 25.7936 17.3633 25.7936 18.3607V20.1361H29.3774L29.065 23.8137H25.7936V35H21.3063V23.8137H19V20.1361H21.3063V17.8613C21.3063 14.7453 22.7708 13 26.4477 13C27.7252 13 28.6602 13.187 29.8753 13.4363L29.315 16.9578Z" fill="white" />
+                    </svg>
+                  )
+                })}
+              </div>
+            </div>
+            <div className='grid grid-cols-4 pb-20 pt-8 gap-6 mt-10'>
+              {[
+                {
+                  title: 'Formalities',
+                  desc: [1, 2, 3, 4]
+                },
+                {
+                  title: 'Formalities',
+                  desc: [1, 2, 3, 4]
+                },
+                {
+                  title: 'Formalities',
+                  desc: [1, 2, 3, 4, 5]
+                },
+                {
+                  title: 'Formalities',
+                  desc: [1, 2, 3]
+                }
+              ].map((e, idx) => {
+                return (
+                  <div key={idx} className=' flex flex-col'>
+                    <h4 className='text-md font-semibold'>{e.title}</h4>
+                    <div className='mt-7'>
+                      <div>
+                        {e.desc.map((e, idx) => {
+                          return (
+                            <p className='underline'>Students</p>
+                          )
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </footer>
       </main>
     </>
   )
