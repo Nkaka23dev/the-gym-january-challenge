@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 import Navbar from '../components/Navbar'
+import MobNav from '../components/MobNav'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,54 +17,68 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Navbar />
+        <Navbar /> 
+        <MobNav/>
         {/* section with circle */}
-        <section className='bg-[#00BEFF] mt-44 h-80 max-w-[74rem] mx-auto px-32  flex justify-between items-center gap-16'>
+        <section className='bg-[#00BEFF] md:mt-28 mt-44 h-80 md:px-5 max-w-[74rem] mx-auto px-24 md:flex-col md:justify-center md:gap-3 flex justify-between items-center gap-16'>
           <div className='space-y-6'>
-            <h4 className='font-bold text-3xl'>Students</h4>
-            <p>Important news, links, documents, and tips for students of the University of Stuttgart: This page offers information on your studies.</p>
+            <h4 className='font-bold  text-[1.96rem] md:text-xl'>Students</h4>
+            <p className='text-md tracking-wide'>Important news, links, documents, and tips for students of the University of Stuttgart: This page offers information on your studies.</p>
           </div>
-          <div className='p-32 relative text-white hover:text-black -mb-28 bg-[#333333] hover:bg-white duration-200 rounded-full'>
-            <div className='absolute top-28  left-10'>
+          <div className='hidden mt-6 md:blockm md:flex gap-8 items-center'>
+                <svg className='group-hover:stroke-white   duration-300' width="17px" height="17px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="7.072" stroke="#000000" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><polyline points="18.86 57.47 44.12 30.84 18.86 6.58"></polyline></g></svg>
+                <p className='text-sm font-semibold underline hover:no-underline cursor-pointer'>INFORMATION FOR
+                PROSPECTIVE STUDENTS</p>
+            </div>
+          <div className='p-[8.5rem] md:hidden relative text-white hover:text-black -mb-28 bg-[#333333] hover:bg-white group duration-200 rounded-full'>
+            <div className='absolute top-28  left-8 '>
               <p className='text-md font-bold'>INFORMATION FOR
                 PROSPECTIVE STUDENTS</p>
+                <svg className='group-hover:stroke-black absolute top-[7rem] left-24  duration-300' width="17px" height="17px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="7.072" stroke="#ffffff" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><polyline points="18.86 57.47 44.12 30.84 18.86 6.58"></polyline></g></svg>
             </div>
           </div>
         </section>
         {/* form section */}
-        <section className='max-w-[74rem] bg-white mx-auto'>
-          <div className=' max-w-[44rem] mx-auto grid py-16'>
-            <div className=' bg-[#EEEEEE] px-10  py-6'>
-              <h4 className='mb-2'>Begriff</h4>
+        <section className='max-w-[74rem] md:px-7 bg-white mx-auto'>
+          <div className=' max-w-[44rem] mx-auto grid pt-16 pb-8'>
+            <div className=' bg-[#EEEEEE] px-10  py-3'>
+              <h4 className='mb-2 text-gray-400'>Begriff</h4>
               <div>
-                <input className='border border-gray-500  py-4 px-2 w-full focus:outline-blue-500' type="text" placeholder='Suchen Sie nach Begriffen aus dem Uni-Glossar' />
-                <button className='px-6 text-sm py-4 bg-blue-600 text-white mt-4'>BEGRIFF SUCHEN</button>
+                <input className='border border-gray-300  py-4 px-3 w-full  focus:outline-blue-200' type="text" placeholder='Suchen Sie nach Begriffen aus dem Uni-Glossar' />
+                <button className='px-9 hover:bg-gray-800 duration-300 text-[0.85rem] tracking-wide py-4 bg-[#004191] font-bold text-white mt-4'>BEGRIFF SUCHEN</button>
               </div>
             </div>
           </div>
         </section>
 
-        <section>
-          <div className='max-w-[74rem] bg-white px-32 mx-auto grid grid-cols-3 gap-5'>
+        <section className=''>
+          <div className='max-w-[74rem] bg-white px-32 mx-auto md:grid-cols-1 md:w-full md:max-w-full md:px-5 grid grid-cols-3 gap-5'>
             {[{
-              title: 'igital services',
-              desc: [1, 2, 3, 4, 5, 6]
+              title: 'Digital services',
+              img:'https://www.student.uni-stuttgart.de/img/easydb-2019_11_20_Unitag_118.jpg?__scale=w:370,h:370,cx:332,cy:0,cw:1335,ch:1335',
+              desc: ['C@MPUS - campus management and lectures', 'How to C@MPUS','ILIAS','University library','E-mail','Further digital services']
             }, {
-              title: 'igital services',
-              desc: [1, 2, 3, 4, 5]
+              title: 'Organizing your studies',
+              img:'https://www.student.uni-stuttgart.de/img/easydb-IMG_0423.jpg?__scale=w:370,h:370,cx:0,cy:250,cw:1500,ch:1500',
+              desc: ['Getting started','Formalities','Exam organization','Student Service and Examination','Academic calendar']
+            
             }, {
-              title: 'igital services',
-              desc: [1, 2, 3, 4, 5]
+              title: 'University life',
+              img:'https://www.student.uni-stuttgart.de/img/easydb-2019_11_20_Unitag_113.jpg?__scale=w:370,h:370,cx:332,cy:0,cw:1335,ch:1335',
+              desc: [' stuvus - the Student Union of theUniversity of Stuttgart', 'Studierendenwerk Stuttgart(Student Services)', 'Internships, mentoring and career', 'Campus map', 'Lost property']
             },].map((e, idx) => {
               return (
                 <div key={idx}>
-                  <img src="https://www.student.uni-stuttgart.de/img/easydb-2019_11_20_Unitag_118.jpg?__scale=w:370,h:370,cx:332,cy:0,cw:1335,ch:1335" alt="" />
-                  <h4 className='py-2 text-lg font-bold'>{e.title}</h4>
+                  <img src={e.img} alt="" className=' ' />
+                  <h4 className='pt-5 text-xl  font-bold'>{e.title}</h4>
                   <div>
-                    <div>
+                    <div className=''>
                       {e.desc.map((e, idx) => {
                         return (
-                          <h4 className='py-2  font-semiboldbold'>How to C@MPUS</h4>
+                        <div key={idx} className='flex cursor-pointer items-center px-2'>
+                        <svg className='stroke-black duration-300' width="17px" height="17px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="8.072" stroke="#ffffff" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><polyline points="18.86 57.47 44.12 30.84 18.86 6.58"></polyline></g></svg>
+                          <h4 className='mt-2 text-[#004191] hover:underline font-bold'>{e}</h4>
+                        </div>
                         )
                       })}
                     </div>
@@ -74,7 +89,7 @@ export default function Home() {
           </div>
         </section>
         {/* button section */}
-        <section className='max-w-[74rem] bg-white grid py-2 mx-auto'>
+        <section className='max-w-[74rem] bg-white grid py-16 mx-auto'>
           <div className='m-auto'>
             <button className='px-6 text-sm font-bold py-4 bg-blue-600 text-white mt-4 mx-auto'>
               STUDY PROGRAMS'WEBPAGES FOR STUDENTS</button>
@@ -82,142 +97,144 @@ export default function Home() {
         </section>
         {/* next section */}
         <section>
-          <div className='max-w-[74rem] bg-[#333333] text-white  py-2 px-32 mx-auto'>
-            <h4 className='text-2xl font-bold pt-10'>News and events for students</h4>
-            <div className='grid grid-cols-3 mt-5 gap-6 pb-44'>
-              <div className='space-y-6'>
-                {[1, 2].map((e, i) => {
+          <div className='max-w-[74rem]  bg-[#333333] text-white md:px-6 py-2 px-28 mx-auto'>
+            <h4 className='text-[1.7rem] font-bold pt-10'>News and events for students</h4>
+            <div className='grid text-[#333333]  md:grid-cols-1  grid-cols-3 mt-5 gap-6  pb-10'>
+              <div className='space-y-6 '>
+                {[{
+                  title: 'Newsticker: Information on the coronavirus',
+                  desc: ''
+                }, {
+                  title: 'Impressive research in the field of business administration',
+                  desc: ''
+                }].map((e, i) => {
                   return (
-                    <div className='bg-white text-black py-8 px-4'>
-                      <h4 className='text-2xl font-bold'>Newsticker: Information
-                        on the coronavirus</h4>
-                      <p>Article | 11/10/22</p>
+                    <div key={i} className='bg-white duration-300 cursor-pointer hover:bg-[#00beff] text-black py-8 px-4'>
+                      <h4 className='text-[1.35rem] max-w-[16rem] leading-7 font-bold'>{e.title}</h4>
+                      <p className='mt-5 font-thin'>Article | 11/10/22</p>
                     </div>
                   )
                 })}
-                <div className='bg-white flex flex-col space-y-5 text-black'>
-                      <img src="https://www.uni-stuttgart.de/universitaet/aktuelles/meldungen/img-news/instagram.jpg?__scale=w:220,h:220,cx:333,cy:0,cw:1333,ch:1333" alt="" className='m-auto rounded-full' />
-                      <div className='px-4 flex items-start flex-col justify-between'>
-                        <h4 className='text-2xl font-bold'>
-                        Latest episode:Intelligent systems will help us in crises and in he future
-                        </h4>
-                      </div>
-                    </div>
+                <div className='bg-white duration-300 cursor-pointer hover:bg-[#00beff] flex flex-col space-y-5 text-black'>
+                  <img src="https://www.uni-stuttgart.de/universitaet/aktuelles/meldungen/img-news/instagram.jpg?__scale=w:220,h:220,cx:333,cy:0,cw:1333,ch:1333" alt="" className='m-auto rounded-full object-cover mt-8' />
+                  <div className='px-4 flex pt-5 items-start flex-col justify-between'>
+                    <h4 className='text-[1.35rem] max-w-[16rem] leading-7 font-bold'>
+                      The University of Stuttgart's five most beautiful Instagram pictures
+                    </h4>
+                    <p className='mt-5 font-thin'>Article | 11/10/22</p>
+                    <p className='mt-5 font-thin'>Photo: Addictive Stock / photocase.de</p>
+                  </div>
+                </div>
               </div>
               <div className='space-y-6'>
-              <div className='bg-white flex flex-col space-y-5 text-black'>
-                      <img src="https://www.uni-stuttgart.de/universitaet/aktuelles/meldungen/img-news/instagram.jpg?__scale=w:220,h:220,cx:333,cy:0,cw:1333,ch:1333" alt="" className='m-auto rounded-full' />
-                      <div className='px-4 flex items-start flex-col justify-between'>
-                        <h4 className='text-2xl font-bold'>
-                        Latest episode:Intelligent systems will help us in crises and in he future
-                        </h4>
-                      </div>
-                    </div>
-              <div className='bg-white flex flex-col space-y-5 text-black'>
-                      <img src="https://www.uni-stuttgart.de/universitaet/aktuelles/meldungen/img-news/instagram.jpg?__scale=w:220,h:220,cx:333,cy:0,cw:1333,ch:1333" alt="" className='m-auto rounded-full' />
-                      <div className='px-4 flex items-start flex-col justify-between'>
-                        <h4 className='text-2xl font-bold'>
-                        Latest episode:Intelligent systems will help us in crises and in he future
-                        </h4>
-                      </div>
-                    </div>
-                <div className='bg-white flex flex-col space-y-5 text-black'>
-                      <img src="https://www.uni-stuttgart.de/universitaet/aktuelles/meldungen/img-news/instagram.jpg?__scale=w:220,h:220,cx:333,cy:0,cw:1333,ch:1333" alt="" className='m-auto rounded-full' />
-                      <div className='px-4 flex items-start flex-col justify-between'>
-                        <h4 className='text-2xl font-bold'>
-                        Latest episode:Intelligent systems will help us in crises and in he future
-                        </h4>
-                      </div>
-                    </div>
+                <div className='bg-white duration-300 cursor-pointer hover:bg-[#00beff]  flex flex-col space-y-5 text-black'>
+                  <img src="https://www.uni-stuttgart.de/universitaet/aktuelles/video/img-video-vorschaubilder/24A_1280x720.jpg?__scale=w:560,h:400,cx:136,cy:0,cw:1008,ch:720" alt="" className='w-full h-full object-contain' />
+                  <div className='px-4 flex py-5 items-start flex-col justify-between'>
+                    <h4 className='text-[1.35rem] max-w-[16rem] leading-7 font-bold'>
+                      Latest episode:
+                      "Intelligent systems will
+                      help us in crises and in
+                      the future"
+                    </h4>
+                    <p className='mt-5 font-thin'>Video | Youtube</p>
+
+                  </div>
+                </div>
+                <div className='bg-white duration-300 cursor-pointer hover:bg-[#00beff]  flex flex-col space-y-5 text-black'>
+                  <img src="https://www.uni-stuttgart.de/universitaet/aktuelles/meldungen/img-news/photocase_4910444.jpg?__scale=w:220,h:220,cx:0,cy:871,cw:2000,ch:2000" alt="" className='m-auto rounded-full mt-8' />
+                  <div className='px-4 flex py-5 items-start flex-col justify-between'>
+                    <h4 className='text-[1.35rem] max-w-[16rem] leading-7 font-bold'>
+                      Energy savings in
+                      November
+                    </h4>
+                    <p className='mt-5 font-thin'>Article 1 12/15/22</p>
+
+                  </div>
+                </div>
+                <div className='bg-white duration-300 cursor-pointer hover:bg-[#00beff]  flex flex-col space-y-5 text-black'>
+                  <img src="https://www.uni-stuttgart.de/universitaet/aktuelles/meldungen/img-news/diversity-kalender.JPG?__scale=w:220,h:220,cx:170,cy:0,cw:832,ch:832" alt="" className='m-auto rounded-full mt-10' />
+                  <div className='px-4 flex py-5 pb-12 items-start flex-col justify-between'>
+                    <h4 className='text-[1.35rem] max-w-[16rem] leading-7 font-bold'>
+                      Diversity calendar makes
+                      diversity visible
+                    </h4>
+                    <p className='mt-5 font-thin'>News | 12/15/22</p>
+
+                  </div>
+                </div>
               </div>
               <div className='space-y-6'>
-              
-              <div className='bg-white flex flex-col space-y-5 text-black'>
-                      <img src="https://www.uni-stuttgart.de/universitaet/aktuelles/meldungen/img-news/instagram.jpg?__scale=w:220,h:220,cx:333,cy:0,cw:1333,ch:1333" alt="" className='m-auto rounded-full' />
-                      <div className='px-4 flex items-start flex-col justify-between'>
-                        <h4 className='text-2xl font-bold'>
-                        Latest episode:Intelligent systems will help us in crises and in he future
-                        </h4>
-                      </div>
-                    </div>
-                <div className='bg-white flex flex-col space-y-5 text-black'>
-                      <img src="https://www.uni-stuttgart.de/universitaet/aktuelles/meldungen/img-news/instagram.jpg?__scale=w:220,h:220,cx:333,cy:0,cw:1333,ch:1333" alt="" className='m-auto rounded-full' />
-                      <div className='px-4 flex items-start flex-col justify-between'>
-                        <h4 className='text-2xl font-bold'>
-                        Latest episode:Intelligent systems will help us in crises and in he future
-                        </h4>
-                      </div>
-                    </div>
-                    <div className='bg-white text-black py-8 px-4'>
-                      <h4 className='text-2xl font-bold'>Newsticker: Information
-                        on the coronavirus</h4>
-                      <p>Article | 11/10/22</p>
-                    </div>
+
+                <div className='bg-white duration-300 cursor-pointer hover:bg-[#00beff]  flex flex-col space-y-5 text-black'>
+                  <img src="https://www.usus.uni-stuttgart.de/img/2022/stressed-student.jpg?__scale=w:560,h:400,cx:67,cy:0,cw:1866,ch:1333" alt="" className='m-auto   object-contain w-full' />
+                  <div className='px-4 flex py-5 items-start flex-col justify-between'>
+                    <h4 className='text-md max-w-[16rem] leading-7'>
+                      Everyone feels sometimes stressed
+                      during their studies. But what can
+                      you do against it? Constanza has a
+                      few tips.
+                    </h4>
+                    <p className='mt-5 font-thin'>News | 12/15/22</p>
+
+                  </div>
+                </div>
+                <div className='bg-white duration-300 cursor-pointer hover:bg-[#00beff] text-black py-8 px-4'>
+                  <h4 className='text-[1.35rem] max-w-[16rem] leading-7 font-bold'>
+                    General questions:
+                    imited office hours
+                    ecember 22, 2022 -
+                    anuary 6, 2023
+                  </h4>
+                  <p className='mt-5 font-thin'>News | 11/10/22</p>
+                </div>
+                <div className='bg-white duration-300 cursor-pointer hover:bg-[#00beff]  flex flex-col space-y-5 text-black'>
+                  <img src="https://www.simtech.uni-stuttgart.de/img/Sim_Tech_Folge_03_Szene_27.jpg?__scale=w:220,h:220,cx:262,cy:26,cw:1073,ch:1073" alt="" className='m-auto rounded-full mt-10' />
+                  <div className='px-4 flex py-5 pb-12 items-start flex-col justify-between'>
+                    <h4 className='text-[1.35rem] max-w-[16rem] leading-7 font-bold'>
+                      Sim & Tech solve their third case
+                    </h4>
+                    <p className='mt-5 font-thin'>News | 12/15/22</p>
+
+                  </div>
+                </div>
+
               </div>
-              {/* {[
-                {
-                  img: 'https://www.uni-stuttgart.de/universitaet/aktuelles/video/img-video-vorschaubilder/24A_1280x720.jpg?__scale=w:560,h:400,cx:136,cy:0,cw:1008,ch:720',
-                  tititle: 'Latest episode:Intelligent systems will help us in crises and in he future',
-                  desc: 'Video I YouTube'
-
-                },
-                {
-                  img: "https://www.usus.uni-stuttgart.de/img/2022/stressed-student.jpg?__scale=w:560,h:400,cx:67,cy:0,cw:1866,ch:1333",
-                  tititle: 'veryone feels sometimes stressed during their studies. But what can ou do against it? Constanza has aew tips.',
-                  desc: 'USUS blog | 1/4/23'
-
-                }, {
-                  img: "https://www.usus.uni-stuttgart.de/img/2022/stressed-student.jpg?__scale=w:560,h:400,cx:67,cy:0,cw:1866,ch:1333",
-                  tititle: 'veryone feels sometimes stressed during their studies. But what can ou do against it? Constanza has aew tips.',
-                  desc: 'USUS blog | 1/4/23'
-
-                }, {
-                  img: "https://www.usus.uni-stuttgart.de/img/2022/stressed-student.jpg?__scale=w:560,h:400,cx:67,cy:0,cw:1866,ch:1333",
-                  tititle: 'veryone feels sometimes stressed during their studies. But what can ou do against it? Constanza has aew tips.',
-                  desc: 'USUS blog | 1/4/23'
-
-                },
-                {
-                  img: "https://www.usus.uni-stuttgart.de/img/2022/stressed-student.jpg?__scale=w:560,h:400,cx:67,cy:0,cw:1866,ch:1333",
-                  tititle: 'veryone feels sometimes stressed during their studies. But what can ou do against it? Constanza has aew tips.',
-                  desc: 'USUS blog | 1/4/23'
-
-                },].map((e, idx) => {
-                  return (
-                    <div key={idx} className='bg-white space-y-5 text-black'>
-                      <img src={e.img} alt="" />
-                      <div className='px-4 flex items-start flex-col justify-between'>
-                        <h4 className={`${idx === 0 ? 'text-2xl font-bold' : 'text-md'} `}>
-                          {e.tititle}
-                        </h4>
-                      </div>
-                    </div>
-                  )
-                })} */}
             </div>
+
+          </div>
+          <section className='max-w-[74rem] bg-[#333333] grid py-2 pb-16 mx-auto'>
+            <div className='m-auto'>
+              <div className='space-x-5'>
+                <button className='px-8 text-sm  py-4 border font-semibold border-white text-white mt-4 mx-auto'>
+                  ALL NEWS</button>
+                <button className='px-8 text-sm font-semibold py-4 border border-white text-white mt-4 mx-auto'>
+                  ALL EVENTS</button>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        {/* next section */}
+        <section>
+          <div className='max-w-[74rem] bg-white h-7 px-32 mx-auto'>
+
           </div>
         </section>
 
         <section>
-          <div className='max-w-[74rem] bg-white h-10 px-32 mx-auto'>
-            hello
-          </div>
-        </section>
-
-        <section>
-          <div className='max-w-[74rem] bg-[#004696] text-white  py-6 px-32 mx-auto'>
-            <h4 className='text-2xl font-bold'>News and events for students</h4>
-            <div className='grid grid-cols-2'>
+          <div className='max-w-[74rem] bg-[#004696] text-white md:px-5  py-14 px-24 mx-auto'>
+            <h4 className='text-2xl font-bold  pb-6'>Information for students</h4>
+            <div className='grid md:grid-cols-1 grid-cols-2'>
               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((e, idx) => {
                 return (
 
-                  <div key={idx} className='mt-5 flex gap-4 items-center'>
-                    <div className='border border-white  px-12 rounded-full py-12'>
-                      <svg className='' width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="5.072" stroke="#ffffff" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><polyline points="18.86 57.47 44.12 30.84 18.86 6.58"></polyline></g></svg>
+                  <div key={idx} className='mt-8 flex md:gap-4 gap-10 items-center'>
+                    <div className='border-2 md:py-4 md:px-4 cursor-pointer group duration-300 hover:bg-white border-white  px-[3.4rem] rounded-full py-[3.4rem]'>
+                      <svg className='group-hover:stroke-black duration-300' width="17px" height="17px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="7.072" stroke="#ffffff" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><polyline points="18.86 57.47 44.12 30.84 18.86 6.58"></polyline></g></svg>
                     </div>
                     <div>
-                      <h4 className='font-bold text-xl'>All study programs</h4>
-                      <p className='max-w-xs'>On the webpages of your degree program
+                      <h4 className='font-bold md:text-lg text-xl'>All study programs</h4>
+                      <p className='max-w-xs md:max-w-md'>On the webpages of your degree program
                         you will find information on the study pro-
                         gram structure,</p>
                     </div>
@@ -229,32 +246,69 @@ export default function Home() {
         </section>
         {/* card before footer */}
         <section>
-          <div className='max-w-[74rem] bg-white  py-6 px-32 mx-auto'>
+          <div className='max-w-[74rem] bg-white md:px-5 pt-20 px-24 mx-auto'>
             <h4 className='text-2xl font-bold'>Contact</h4>
-            <div className='grid grid-cols-3 gap-6 mt-10'>
+            <div className='grid md:grid-cols-1 grid-cols-3 gap-6 mt-3 pb-20'>
               {[
                 {
                   title: 'Dezernat Internationales',
-                  desc: [1, 2, 3]
+                  img: 'https://www.beschaeftigte.uni-stuttgart.de/img-beschaeftigte/iz_mitarbeiter/Dezernat-Internationales-IZ.jpg?__scale=w:150,h:150,cx:0,cy:0,cw:2000,ch:2000',
+                  desc: [
+                    {
+                      text: 'Profile Page',
+                      icon: 'pro.png'
+                    },
+                    {
+                      text: '+4971 7775674',
+                      icon: 'phone.png'
+                    },
+                    {
+                      text: 'Write Email',
+                      icon: 'pro.png'
+                    },
+                    {
+                      text: 'Office hours (online). d: Mon & Wed 10 a.m. to noon; Office hours (on site): Mon & Wed, 2 p.m. to 4 p.m. , Tue & Thur, 10 a.m. to noon',
+                      icon: 'exc.png'
+                    },
+                  ]
                 },
                 {
-                  title: 'Dezernat Internationales',
-                  desc: [1, 2, 3]
+                  title: 'Student Counseling Center',
+                  img: 'https://www.uni-stuttgart.de/studium/beratung/img-fachstudienberater/zsb_employee.jpg?__scale=w:150,h:150,cx:0,cy:0,cw:620,ch:620',
+                  desc: [
+                    {
+                      text: 'Profile Page',
+                      icon: 'pro.png'
+                    },
+                    {
+                      text: '+4971 7775674',
+                      icon: 'phone.png'
+                    }
+                  ]
                 },
                 {
-                  title: 'Dezernat Internationales',
-                  desc: [1, 2, 3]
+                  title: 'Student Service and Examination Office',
+                  img: 'https://www.uni-stuttgart.de/studium/beratung/img-fachstudienberater/zsb_employee.jpg?__scale=w:150,h:150,cx:0,cy:0,cw:620,ch:620',
+                  desc: [
+                    {
+                      text: 'Pfaffenwaldring 5 c, 70569 Stuttgart, House of students',
+                      icon:'phone.png'
+                    },
+                    , 3]
                 }
               ].map((e, idx) => {
                 return (
-                  <div key={idx} className='border-2 border-black p-6 flex flex-col'>
-                    <img className='rounded-full m-auto' src="https://www.beschaeftigte.uni-stuttgart.de/img-beschaeftigte/iz_mitarbeiter/Dezernat-Internationales-IZ.jpg?__scale=w:150,h:150,cx:0,cy:0,cw:2000,ch:2000" alt="" />
-                    <h4 className='text-2xl mt-20 font-bold'>{e.title}</h4>
+                  <div key={idx} className='border-2  border-black p-6 '>
+                    <img className='rounded-full  m-auto' src={e.img} alt="" />
+                    <h4 className='text-2xl mt-14  flex justify-start font-bold'>{e.title}</h4>
                     <div>
-                      <div>
+                      <div className='mt-2'>
                         {e.desc.map((e, idx) => {
                           return (
-                            <p>Profile Page</p>
+                            <div className='flex items-center underline hover:no-underline duration-300 cursor-pointer'>
+                              <img src={e.icon} alt="" />
+                              <p>{e.text}</p>
+                            </div>
                           )
                         })}
                       </div>
@@ -267,39 +321,42 @@ export default function Home() {
         </section>
 
         <footer>
-          <div className='max-w-[74rem]  bg-[#333333] text-white pt-16 px-32 mx-auto'>
-            <div className='grid grid-cols-2'>
+          <div className='max-w-[74rem]  bg-[#333333] text-white md:px-5 pt-10 px-32 mx-auto'>
+            <div className='grid md:grid-cols-1 grid-cols-3'>
               <div>
-                <img className='w-64' src="https://www.student.uni-stuttgart.de/system/modules/de.stuttgart.uni.v3.basics/resources/img/svg/logo-inverted-en.svg" alt="" />
+                <img className='w-56' src="https://www.student.uni-stuttgart.de/system/modules/de.stuttgart.uni.v3.basics/resources/img/svg/logo-inverted-en.svg" alt="" />
               </div>
-              <div className='flex gap-3 items-center'>
+              <div className='flex gap-4 md:gap-0 items-center md:grid md:grid-cols-3 md:mt-6 col-span-2'>
                 {[1, 2, 3, 4, 5, 6, 7].map((e, idx) => {
                   return (
-                    <svg className='fill-[#333333] border border-gray-400  rounded-full' xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 48 48" fill="none">
+                   <div className='space-y-4'>
+                   <svg className='fill-[#333333] hover:fill-[#3b5998] border border-gray-400  rounded-full' xmlns="http://www.w3.org/2000/svg" width="60px" height="60px" viewBox="0 0 48 48" fill="none">
                       <circle cx="24" cy="24" r="20" fill="" />
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M29.315 16.9578C28.6917 16.8331 27.8498 16.74 27.3204 16.74C25.8867 16.74 25.7936 17.3633 25.7936 18.3607V20.1361H29.3774L29.065 23.8137H25.7936V35H21.3063V23.8137H19V20.1361H21.3063V17.8613C21.3063 14.7453 22.7708 13 26.4477 13C27.7252 13 28.6602 13.187 29.8753 13.4363L29.315 16.9578Z" fill="white" />
                     </svg>
+                    <p>Facebbok</p>
+                   </div>
                   )
                 })}
               </div>
             </div>
-            <div className='grid grid-cols-4 pb-20 pt-8 gap-6 mt-10'>
+            <div className='grid md:grid-cols-1 grid-cols-4 pb-20 pt-8 gap-6 mt-10'>
               {[
                 {
-                  title: 'Formalities',
-                  desc: [1, 2, 3, 4]
+                  title: 'Audience',
+                  desc: ['Students', 'Employees', 'Alunia and supporter', 'Industries']
                 },
                 {
                   title: 'Formalities',
-                  desc: [1, 2, 3, 4]
+                  desc: ['Legal Notice', 'Private Notice', 'accessibility', 'Certificate']
                 },
                 {
-                  title: 'Formalities',
-                  desc: [1, 2, 3, 4, 5]
+                  title: 'Services',
+                  desc: ['Contacts','Press','Job','Apply for doctorate or','Post doc','Uni-shop']
                 },
                 {
-                  title: 'Formalities',
-                  desc: [1, 2, 3]
+                  title: 'Organization',
+                  desc: ['faculties and institutes', 'Facilities', 'Centarl administartation']
                 }
               ].map((e, idx) => {
                 return (
@@ -309,7 +366,7 @@ export default function Home() {
                       <div>
                         {e.desc.map((e, idx) => {
                           return (
-                            <p className='underline'>Students</p>
+                            <p key={idx} className='underline'>{e}</p>
                           )
                         })}
                       </div>
@@ -320,6 +377,9 @@ export default function Home() {
             </div>
           </div>
         </footer>
+        <button className='w-12 h-12 rounded-full  bg-[#004191] fixed md:right-2 right-44 bottom-3 z-50'>
+         <svg className='group-hover: rotate-[270deg] ml-4 mt-1 roke-black duration-300' width="17px" height="17px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="7.072" stroke="#ffffff" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><polyline points="18.86 57.47 44.12 30.84 18.86 6.58"></polyline></g></svg>
+        </button>
       </main>
     </>
   )
