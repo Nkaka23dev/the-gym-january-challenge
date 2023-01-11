@@ -26,16 +26,20 @@ const handleClick = () => {
                     </div>
 
                 </div>
+                
                 <div className='max-w-[74rem] bg-[#303A3D] text-white mx-auto -z-50 absolute top-0 w-full left-0 md:px-4'>
                     <div className=' max-w-4xl mx-auto py-52'>
                         {['Examination organization','Financing & stipends','International students in Stuttgart', 'Diaital Services', 'Counseling'].map((e,idx) => {
                             return (
+                           <div>
+                           
                             <Link href={e}>
                             <div key={idx} className=' flex justify-between pb-5 md:mt-2 mt-4 border-b border-dashed border-gray-300'>
                                     <p className='text-xl tracking-wide'>{e}</p>
                                     <svg className='' width="17px" height="17px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="6.072" stroke="#ffffff" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><polyline points="18.86 57.47 44.12 30.84 18.86 6.58"></polyline></g></svg>
                                 </div>
                             </Link>
+                           </div>
                             )
                         })}
                     </div>

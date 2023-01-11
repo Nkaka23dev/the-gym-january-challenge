@@ -17,8 +17,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Navbar /> 
-        <MobNav/>
+        <Navbar />
+        <MobNav />
         {/* section with circle */}
         <section className='bg-[#00BEFF] md:mt-28 mt-44 h-80 md:px-5 max-w-[74rem] mx-auto px-24 md:flex-col md:justify-center md:gap-3 flex justify-between items-center gap-16'>
           <div className='space-y-6'>
@@ -26,15 +26,15 @@ export default function Home() {
             <p className='text-md tracking-wide'>Important news, links, documents, and tips for students of the University of Stuttgart: This page offers information on your studies.</p>
           </div>
           <div className='hidden mt-6 md:blockm md:flex gap-8 items-center'>
-                <svg className='group-hover:stroke-white   duration-300' width="17px" height="17px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="7.072" stroke="#000000" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><polyline points="18.86 57.47 44.12 30.84 18.86 6.58"></polyline></g></svg>
-                <p className='text-sm font-semibold underline hover:no-underline cursor-pointer'>INFORMATION FOR
-                PROSPECTIVE STUDENTS</p>
-            </div>
+            <svg className='group-hover:stroke-white   duration-300' width="17px" height="17px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="7.072" stroke="#000000" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><polyline points="18.86 57.47 44.12 30.84 18.86 6.58"></polyline></g></svg>
+            <p className='text-sm font-semibold underline hover:no-underline cursor-pointer'>INFORMATION FOR
+              PROSPECTIVE STUDENTS</p>
+          </div>
           <div className='p-[8.5rem] md:hidden relative text-white hover:text-black -mb-28 bg-[#333333] hover:bg-white group duration-200 rounded-full'>
             <div className='absolute top-28  left-8 '>
               <p className='text-md font-bold'>INFORMATION FOR
                 PROSPECTIVE STUDENTS</p>
-                <svg className='group-hover:stroke-black absolute top-[7rem] left-24  duration-300' width="17px" height="17px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="7.072" stroke="#ffffff" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><polyline points="18.86 57.47 44.12 30.84 18.86 6.58"></polyline></g></svg>
+              <svg className='group-hover:stroke-black absolute top-[7rem] left-24  duration-300' width="17px" height="17px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="7.072" stroke="#ffffff" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><polyline points="18.86 57.47 44.12 30.84 18.86 6.58"></polyline></g></svg>
             </div>
           </div>
         </section>
@@ -55,16 +55,16 @@ export default function Home() {
           <div className='max-w-[74rem] bg-white px-32 mx-auto md:grid-cols-1 md:w-full md:max-w-full md:px-5 grid grid-cols-3 gap-5'>
             {[{
               title: 'Digital services',
-              img:'https://www.student.uni-stuttgart.de/img/easydb-2019_11_20_Unitag_118.jpg?__scale=w:370,h:370,cx:332,cy:0,cw:1335,ch:1335',
-              desc: ['C@MPUS - campus management and lectures', 'How to C@MPUS','ILIAS','University library','E-mail','Further digital services']
+              img: 'https://www.student.uni-stuttgart.de/img/easydb-2019_11_20_Unitag_118.jpg?__scale=w:370,h:370,cx:332,cy:0,cw:1335,ch:1335',
+              desc: ['C@MPUS - campus management and lectures', 'How to C@MPUS', 'ILIAS', 'University library', 'E-mail', 'Further digital services']
             }, {
               title: 'Organizing your studies',
-              img:'https://www.student.uni-stuttgart.de/img/easydb-IMG_0423.jpg?__scale=w:370,h:370,cx:0,cy:250,cw:1500,ch:1500',
-              desc: ['Getting started','Formalities','Exam organization','Student Service and Examination','Academic calendar']
-            
+              img: 'https://www.student.uni-stuttgart.de/img/easydb-IMG_0423.jpg?__scale=w:370,h:370,cx:0,cy:250,cw:1500,ch:1500',
+              desc: ['Getting started', 'Formalities', 'Exam organization', 'Student Service and Examination', 'Academic calendar']
+
             }, {
               title: 'University life',
-              img:'https://www.student.uni-stuttgart.de/img/easydb-2019_11_20_Unitag_113.jpg?__scale=w:370,h:370,cx:332,cy:0,cw:1335,ch:1335',
+              img: 'https://www.student.uni-stuttgart.de/img/easydb-2019_11_20_Unitag_113.jpg?__scale=w:370,h:370,cx:332,cy:0,cw:1335,ch:1335',
               desc: [' stuvus - the Student Union of theUniversity of Stuttgart', 'Studierendenwerk Stuttgart(Student Services)', 'Internships, mentoring and career', 'Campus map', 'Lost property']
             },].map((e, idx) => {
               return (
@@ -75,10 +75,10 @@ export default function Home() {
                     <div className=''>
                       {e.desc.map((e, idx) => {
                         return (
-                        <div key={idx} className='flex cursor-pointer items-center px-2'>
-                        <svg className='stroke-black duration-300' width="17px" height="17px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="8.072" stroke="#ffffff" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><polyline points="18.86 57.47 44.12 30.84 18.86 6.58"></polyline></g></svg>
-                          <h4 className='mt-2 text-[#004191] hover:underline font-bold'>{e}</h4>
-                        </div>
+                          <div key={idx} className='flex cursor-pointer items-center px-2'>
+                            <svg className='stroke-black duration-300' width="17px" height="17px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="8.072" stroke="#ffffff" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><polyline points="18.86 57.47 44.12 30.84 18.86 6.58"></polyline></g></svg>
+                            <h4 className='mt-2 text-[#004191] hover:underline font-bold'>{e}</h4>
+                          </div>
                         )
                       })}
                     </div>
@@ -292,7 +292,7 @@ export default function Home() {
                   desc: [
                     {
                       text: 'Pfaffenwaldring 5 c, 70569 Stuttgart, House of students',
-                      icon:'phone.png'
+                      icon: 'phone.png'
                     },
                     , 3]
                 }
@@ -326,21 +326,51 @@ export default function Home() {
               <div>
                 <img className='w-56' src="https://www.student.uni-stuttgart.de/system/modules/de.stuttgart.uni.v3.basics/resources/img/svg/logo-inverted-en.svg" alt="" />
               </div>
-              <div className='flex gap-4 md:gap-0 items-center md:grid md:grid-cols-3 md:mt-6 col-span-2'>
-                {[1, 2, 3, 4, 5, 6, 7].map((e, idx) => {
-                  return (
-                   <div className='space-y-4'>
-                   <svg className='fill-[#333333] hover:fill-[#3b5998] border border-gray-400  rounded-full' xmlns="http://www.w3.org/2000/svg" width="60px" height="60px" viewBox="0 0 48 48" fill="none">
-                      <circle cx="24" cy="24" r="20" fill="" />
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M29.315 16.9578C28.6917 16.8331 27.8498 16.74 27.3204 16.74C25.8867 16.74 25.7936 17.3633 25.7936 18.3607V20.1361H29.3774L29.065 23.8137H25.7936V35H21.3063V23.8137H19V20.1361H21.3063V17.8613C21.3063 14.7453 22.7708 13 26.4477 13C27.7252 13 28.6602 13.187 29.8753 13.4363L29.315 16.9578Z" fill="white" />
-                    </svg>
-                    <p>Facebbok</p>
-                   </div>
-                  )
-                })}
+              <div className='flex gap-4 md:gap-0 items-center md:grid md:grid-cols-3 md:mt-6 col-span-2  cursor-pointer '>
+                {/* {[1, 2, 3, 4, 5, 6, 7].map((e, idx) => {
+                  return ( */}
+                <div className='space-y-4'>
+                  <svg className='fill-[#333333] md:mt-5   border border-gray-400  rounded-full' xmlns="http://www.w3.org/2000/svg" width="60px" height="60px" viewBox="0 0 48 48" fill="none">
+                    <circle cx="24" cy="24" r="20" fill="" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M29.315 16.9578C28.6917 16.8331 27.8498 16.74 27.3204 16.74C25.8867 16.74 25.7936 17.3633 25.7936 18.3607V20.1361H29.3774L29.065 23.8137H25.7936V35H21.3063V23.8137H19V20.1361H21.3063V17.8613C21.3063 14.7453 22.7708 13 26.4477 13C27.7252 13 28.6602 13.187 29.8753 13.4363L29.315 16.9578Z" fill="white" />
+                  </svg>
+                  <p>Facebbok</p>
+                </div>
+                <div className='space-y-4'>
+                  <svg className='fill-[#333333] md:mt-5   border border-gray-400  rounded-full' xmlns="http://www.w3.org/2000/svg" width="60px" height="60px" viewBox="0 0 64 64" stroke-width="3" stroke="#ffffff" fill="none"><rect x="13.8" y="13.02" width="36.4" height="37.97" rx="10.53" stroke-linecap="round" /><circle cx="32" cy="32" r="9.28" stroke-linecap="round" /><circle cx="43.11" cy="19.74" r="1.32" /></svg>
+                  <p>Instagram</p>
+                </div>
+                <div >
+                <svg className='fill-[#333333] md:mt-5    border border-gray-400  rounded-full' xmlns="http://www.w3.org/2000/svg" width="60px" height="60px" viewBox="0 0 16 16" fill="none"><path fill="#ffffff" d="M13.567 5.144c.008.123.008.247.008.371 0 3.796-2.889 8.173-8.172 8.173v-.002A8.131 8.131 0 011 12.398a5.768 5.768 0 004.25-1.19 2.876 2.876 0 01-2.683-1.995c.431.083.875.066 1.297-.05A2.873 2.873 0 011.56 6.348v-.036c.4.222.847.345 1.304.36a2.876 2.876 0 01-.89-3.836 8.152 8.152 0 005.92 3 2.874 2.874 0 014.895-2.619 5.763 5.763 0 001.824-.697 2.883 2.883 0 01-1.262 1.588A5.712 5.712 0 0015 3.656a5.834 5.834 0 01-1.433 1.488z"/></svg>
+                <p className='mt-[0.9rem]'>Twitter</p>
+                </div>
+                <div className='space-y-4'>
+                  <svg className='fill-[#333333] md:mt-5   border border-gray-400  rounded-full' xmlns="http://www.w3.org/2000/svg" width="60px" height="60px" viewBox="0 0 48 48" fill="none">
+                    <circle cx="24" cy="24" r="20" fill="" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M29.315 16.9578C28.6917 16.8331 27.8498 16.74 27.3204 16.74C25.8867 16.74 25.7936 17.3633 25.7936 18.3607V20.1361H29.3774L29.065 23.8137H25.7936V35H21.3063V23.8137H19V20.1361H21.3063V17.8613C21.3063 14.7453 22.7708 13 26.4477 13C27.7252 13 28.6602 13.187 29.8753 13.4363L29.315 16.9578Z" fill="white" />
+                  </svg>
+                  <p>Facebbok</p>
+                </div>
+                <div className='space-y-4'>
+                  <svg className='fill-[#333333] md:mt-5  border border-gray-400  rounded-full' xmlns="http://www.w3.org/2000/svg" width="60px" height="60px" viewBox="0 0 64 64" stroke-width="3" stroke="#ffffff" fill="none"><rect x="13.8" y="13.02" width="36.4" height="37.97" rx="10.53" stroke-linecap="round" /><circle cx="32" cy="32" r="9.28" stroke-linecap="round" /><circle cx="43.11" cy="19.74" r="1.32" /></svg>
+                  <p>Instagram</p>
+                </div>
+                <div className='space-y-4'>
+                  <svg className='fill-[#333333] md:mt-5   border border-gray-400  rounded-full' xmlns="http://www.w3.org/2000/svg" width="60px" height="60px" viewBox="0 0 48 48" fill="none">
+                    <circle cx="24" cy="24" r="20" fill="" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M29.315 16.9578C28.6917 16.8331 27.8498 16.74 27.3204 16.74C25.8867 16.74 25.7936 17.3633 25.7936 18.3607V20.1361H29.3774L29.065 23.8137H25.7936V35H21.3063V23.8137H19V20.1361H21.3063V17.8613C21.3063 14.7453 22.7708 13 26.4477 13C27.7252 13 28.6602 13.187 29.8753 13.4363L29.315 16.9578Z" fill="white" />
+                  </svg>
+                  <p>Facebbok</p>
+                </div>
+                <div className='space-y-4'>
+                  <svg className='fill-[#333333] md:mt-5 border border-gray-400  rounded-full' xmlns="http://www.w3.org/2000/svg" width="60px" height="60px" viewBox="0 0 64 64" stroke-width="3" stroke="#ffffff" fill="none"><rect x="13.8" y="13.02" width="36.4" height="37.97" rx="10.53" stroke-linecap="round" /><circle cx="32" cy="32" r="9.28" stroke-linecap="round" /><circle cx="43.11" cy="19.74" r="1.32" /></svg>
+                  <p>Instagram</p>
+                </div>
+                {/* )
+                })} */}
               </div>
             </div>
-            <div className='grid md:grid-cols-1 grid-cols-4 pb-20 pt-8 gap-6 mt-10'>
+            <div className='grid cursor-pointer md:grid-cols-1 grid-cols-4 pb-20 pt-8 gap-6 mt-10'>
               {[
                 {
                   title: 'Audience',
@@ -352,7 +382,7 @@ export default function Home() {
                 },
                 {
                   title: 'Services',
-                  desc: ['Contacts','Press','Job','Apply for doctorate or','Post doc','Uni-shop']
+                  desc: ['Contacts', 'Press', 'Job', 'Apply for doctorate or', 'Post doc', 'Uni-shop']
                 },
                 {
                   title: 'Organization',
@@ -378,7 +408,7 @@ export default function Home() {
           </div>
         </footer>
         <button className='w-12 h-12 rounded-full  bg-[#004191] fixed md:right-2 right-44 bottom-3 z-50'>
-         <svg className='group-hover: rotate-[270deg] ml-4 mt-1 roke-black duration-300' width="17px" height="17px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="7.072" stroke="#ffffff" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><polyline points="18.86 57.47 44.12 30.84 18.86 6.58"></polyline></g></svg>
+          <svg className='group-hover: rotate-[270deg] ml-4 mt-1 roke-black duration-300' width="17px" height="17px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="7.072" stroke="#ffffff" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><polyline points="18.86 57.47 44.12 30.84 18.86 6.58"></polyline></g></svg>
         </button>
       </main>
     </>
