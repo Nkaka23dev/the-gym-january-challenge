@@ -83,8 +83,8 @@ export default function Home() {
         {/* next section */}
         <section>
           <div className='max-w-[74rem] bg-[#333333] text-white  py-2 px-32 mx-auto'>
-            <h4 className='text-2xl font-bold'>News and events for students</h4>
-            <div className='grid grid-cols-3 mt-5 gap-6'>
+            <h4 className='text-2xl font-bold pt-10'>News and events for students</h4>
+            <div className='grid grid-cols-3 mt-5 gap-6 pb-44'>
               <div className='space-y-6'>
                 {[1, 2].map((e, i) => {
                   return (
@@ -95,8 +95,66 @@ export default function Home() {
                     </div>
                   )
                 })}
+                <div className='bg-white flex flex-col space-y-5 text-black'>
+                      <img src="https://www.uni-stuttgart.de/universitaet/aktuelles/meldungen/img-news/instagram.jpg?__scale=w:220,h:220,cx:333,cy:0,cw:1333,ch:1333" alt="" className='m-auto rounded-full' />
+                      <div className='px-4 flex items-start flex-col justify-between'>
+                        <h4 className='text-2xl font-bold'>
+                        Latest episode:Intelligent systems will help us in crises and in he future
+                        </h4>
+                      </div>
+                    </div>
               </div>
-              {[
+              <div className='space-y-6'>
+              <div className='bg-white flex flex-col space-y-5 text-black'>
+                      <img src="https://www.uni-stuttgart.de/universitaet/aktuelles/meldungen/img-news/instagram.jpg?__scale=w:220,h:220,cx:333,cy:0,cw:1333,ch:1333" alt="" className='m-auto rounded-full' />
+                      <div className='px-4 flex items-start flex-col justify-between'>
+                        <h4 className='text-2xl font-bold'>
+                        Latest episode:Intelligent systems will help us in crises and in he future
+                        </h4>
+                      </div>
+                    </div>
+              <div className='bg-white flex flex-col space-y-5 text-black'>
+                      <img src="https://www.uni-stuttgart.de/universitaet/aktuelles/meldungen/img-news/instagram.jpg?__scale=w:220,h:220,cx:333,cy:0,cw:1333,ch:1333" alt="" className='m-auto rounded-full' />
+                      <div className='px-4 flex items-start flex-col justify-between'>
+                        <h4 className='text-2xl font-bold'>
+                        Latest episode:Intelligent systems will help us in crises and in he future
+                        </h4>
+                      </div>
+                    </div>
+                <div className='bg-white flex flex-col space-y-5 text-black'>
+                      <img src="https://www.uni-stuttgart.de/universitaet/aktuelles/meldungen/img-news/instagram.jpg?__scale=w:220,h:220,cx:333,cy:0,cw:1333,ch:1333" alt="" className='m-auto rounded-full' />
+                      <div className='px-4 flex items-start flex-col justify-between'>
+                        <h4 className='text-2xl font-bold'>
+                        Latest episode:Intelligent systems will help us in crises and in he future
+                        </h4>
+                      </div>
+                    </div>
+              </div>
+              <div className='space-y-6'>
+              
+              <div className='bg-white flex flex-col space-y-5 text-black'>
+                      <img src="https://www.uni-stuttgart.de/universitaet/aktuelles/meldungen/img-news/instagram.jpg?__scale=w:220,h:220,cx:333,cy:0,cw:1333,ch:1333" alt="" className='m-auto rounded-full' />
+                      <div className='px-4 flex items-start flex-col justify-between'>
+                        <h4 className='text-2xl font-bold'>
+                        Latest episode:Intelligent systems will help us in crises and in he future
+                        </h4>
+                      </div>
+                    </div>
+                <div className='bg-white flex flex-col space-y-5 text-black'>
+                      <img src="https://www.uni-stuttgart.de/universitaet/aktuelles/meldungen/img-news/instagram.jpg?__scale=w:220,h:220,cx:333,cy:0,cw:1333,ch:1333" alt="" className='m-auto rounded-full' />
+                      <div className='px-4 flex items-start flex-col justify-between'>
+                        <h4 className='text-2xl font-bold'>
+                        Latest episode:Intelligent systems will help us in crises and in he future
+                        </h4>
+                      </div>
+                    </div>
+                    <div className='bg-white text-black py-8 px-4'>
+                      <h4 className='text-2xl font-bold'>Newsticker: Information
+                        on the coronavirus</h4>
+                      <p>Article | 11/10/22</p>
+                    </div>
+              </div>
+              {/* {[
                 {
                   img: 'https://www.uni-stuttgart.de/universitaet/aktuelles/video/img-video-vorschaubilder/24A_1280x720.jpg?__scale=w:560,h:400,cx:136,cy:0,cw:1008,ch:720',
                   tititle: 'Latest episode:Intelligent systems will help us in crises and in he future',
@@ -135,7 +193,7 @@ export default function Home() {
                       </div>
                     </div>
                   )
-                })}
+                })} */}
             </div>
           </div>
         </section>
