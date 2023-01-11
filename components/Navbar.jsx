@@ -1,5 +1,7 @@
+import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react'
 import MenuComp from './MenuComp';
+
 
 export default function Navbar() {
 const [hidde, setHide] = useState(true);
@@ -21,18 +23,18 @@ const [menu, setMenu] = useState(false);
     return (
         <div className='relative z-50 block md:hidden'>
           {hidde &&  <nav className=''>
-                <div className='bg-[#004191] z-50 fixed right-0 left-0 top-0 px-32 py-[0.6rem] text-white max-w-[74rem] mx-auto flex'>
+                <motion.div transition={{delay: 3, duration: 5}} className='bg-[#004191] z-50 fixed right-0 left-0 top-0 px-32 py-[0.6rem] text-white max-w-[74rem] mx-auto flex'>
                     <div className='ml-auto flex items-center  gap-3'>
                         <h4 className='text-xs items-center'>University of Stuttgart</h4>
                         <div className='border border-white p-[0.18rem] rounded-full '>
                   <svg className='' width="11px" height="11px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="5.072" stroke="#ffffff" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><polyline points="18.86 57.47 44.12 30.84 18.86 6.58"></polyline></g></svg>
                   </div> 
                     </div>
-                </div>
+                </motion.div>
             </nav>}
             {/* second navigation */}
             <section className=''>
-                <div className={`${hidde === true?'px-24 mt-9  fixed right-0 left-0 top-0 py-10 text-black bg-white max-w-[74rem] mx-auto  flex justify-between items-center':'px-32 mt-0 fixed right-0 left-0 top-0 py-2 text-black bg-white max-w-[74rem] mx-auto flex justify-between items-center'}`}>
+                <motion.div initial={{}} animate={{}} transition={{}} className={`${hidde === true?'px-24 mt-9  fixed right-0 duration-500 left-0 top-0 py-10 text-black bg-white max-w-[74rem] mx-auto  flex justify-between items-center':'px-32 duration-500 mt-0 fixed right-0 left-0 top-0 py-2 text-black bg-white max-w-[74rem] mx-auto flex justify-between items-center'}`}>
                     <div className='flex items-center'>
                         <img src="/log1.png" className={`${hidde?'h-[4.5rem] w-[4.5rem] object-cover':'h-12 w-12 object-cover'}`} alt="" />
                         <div className='self-end'>
@@ -50,7 +52,7 @@ const [menu, setMenu] = useState(false);
                         </svg>
                         <svg onClick={toggleMenu}  fill="#000000" width="30px" height="30px" viewBox="0 0 32.00 32.00" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#000000" stroke-width="0.00032"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>bars</title> <path d="M2 8.749h28c0.414 0 0.75-0.336 0.75-0.75s-0.336-0.75-0.75-0.75v0h-28c-0.414 0-0.75 0.336-0.75 0.75s0.336 0.75 0.75 0.75v0zM30 15.25h-28c-0.414 0-0.75 0.336-0.75 0.75s0.336 0.75 0.75 0.75v0h28c0.414 0 0.75-0.336 0.75-0.75s-0.336-0.75-0.75-0.75v0zM30 23.25h-28c-0.414 0-0.75 0.336-0.75 0.75s0.336 0.75 0.75 0.75v0h28c0.414 0 0.75-0.336 0.75-0.75s-0.336-0.75-0.75-0.75v0z"></path> </g></svg>
                     </div>
-                </div>
+                </motion.div>
             </section>
 
             {/* section that hold the menu when clicked */}
